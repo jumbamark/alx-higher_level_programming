@@ -4,4 +4,4 @@
 ### Files
 | Filename | Description |
 | -------- | ----------- |
-| 0-run    | shell script that runs a Python script, name is stored in an environment variable |
+| 0-run    | shell script that runs a Python script, file name is stored in an environment variable |
