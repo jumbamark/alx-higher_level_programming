@@ -1,9 +1,8 @@
-## Python-if/else, loops, functions
+## 0x01. Python - if/else, loops, functions
 
-### Table of Contents
-     Files         |      Description         
------------------- | ------------------------ 
-[0-positive_or_negative.py](./0-positive_or_negative.py) | prints whether a given random number is positive or negative
+Files | Description
+----- | -----------
+[0-positive_or_negative.py](./0-positive_or_negative.py) | Python script that prints whether a given random number is positive or negative
 [1-last_digit.py](./1-last_digit.py) | Python script that prints the last digit of a given random number
 [2-print_alphabet.py](./2-print_alphabet.py) | Python script that prints the ASCII alphabet, in lowercase, not followed by a new line
 [3-print_alphabt.py](./3-print_alphabt.py) | Python script that prints the ASCII alphabet, in lowercase, except e and q
