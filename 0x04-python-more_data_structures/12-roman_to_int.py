@@ -6,7 +6,7 @@ def roman_to_int(roman_string):
     i = 0
     integer = 0
 
-    if roman_string is not str:
+    if not roman_string or type(roman_string) != str:
         return 0
 
     while (i < len(roman_string)):
@@ -24,4 +24,4 @@ def roman_to_int(roman_string):
             integer = integer + val_char1
             i += 1
 
-    return int(integer)
+    return integer
