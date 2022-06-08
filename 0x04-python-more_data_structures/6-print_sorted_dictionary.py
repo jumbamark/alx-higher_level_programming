@@ -7,6 +7,5 @@ def print_sorted_dictionary(a_dictionary):
     new_dict = {}
     for i in keys:
         new_dict[i] = a_dictionary[i]
-    #print(new_dict)
     for m, n in new_dict.items():
         print(f"{m}: {n}")
