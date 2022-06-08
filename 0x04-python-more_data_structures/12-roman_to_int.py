@@ -6,6 +6,9 @@ def roman_to_int(roman_string):
     i = 0
     integer = 0
 
+    if roman_string is not str:
+        return 0
+
     while (i < len(roman_string)):
         val_char1 = dict_rom[roman_string[i]]
         if (i + 1) < len(roman_string):
@@ -21,4 +24,4 @@ def roman_to_int(roman_string):
             integer = integer + val_char1
             i += 1
 
-    return integer
+    return int(integer)
