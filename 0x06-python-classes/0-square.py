@@ -2,7 +2,5 @@
 
 
 class Square:
-    """
-    Represents an empty square
-    """
+    """Represents an empty square"""
     pass
