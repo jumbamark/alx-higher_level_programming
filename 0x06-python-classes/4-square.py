@@ -10,6 +10,7 @@ class Square:
     Instantiation with optional size: def __init__(self, size=0)
     """
     def __init__(self, size=0):
+        """Method to initialize the square object"""
         self.__size = size
 
     @property
@@ -25,7 +26,7 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            return self.__value = value
+            self.__size = value
 
     def area(self):
         """Public instance method that returns the current square area"""
