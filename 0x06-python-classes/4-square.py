@@ -21,11 +21,11 @@ class Square:
     def size(self, value):
         """Property setter to set the size of the square object"""
         if type(value) != int:
-            return TypeError("size must be an integer")
+            raise TypeError("size must be an integer")
         elif value < 0:
-            return ValueError("size must be >= 0")
+            raise ValueError("size must be >= 0")
         else:
-            return self.__value
+            return self.__value = value
 
     def area(self):
         """Public instance method that returns the current square area"""
