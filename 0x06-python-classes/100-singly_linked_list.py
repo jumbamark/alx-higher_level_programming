@@ -57,12 +57,12 @@ class SinglyLinkedList:
     def __str__(self):
         """Print statement in the main file."""
         rtn = ""
-        ptr = self.__head
+        node = self.head
 
-        while ptr:
-            rtn += str(ptr.data)
+        while node:
+            rtn += str(node.data)
             rtn += "\n"
-            ptr = ptr.next_node
+            node = node.next_node
         return rtn
 
     def sorted_insert(self, value):
