@@ -1,0 +1,74 @@
+========================
+``0-add_integer`` module
+=========================
+
+Using ``add_integer``
+---------------------
+
+Import the function
+===================
+
+::
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Testing for integers
+====================
+
+::
+
+	>>> add_integer(6, 7)
+	13
+
+Integer and floating point value
+================================
+
+::
+
+	>>> add_integer(3, 2.5)
+	5
+
+Default parameter
+=================
+
+::
+	>>> add_integer(2)
+	100
+
+Floating point values
+=====================
+
+::
+
+	>>> add_integer(10.1, 20.6)
+	30
+
+Negative values
+===============
+
+::
+	>>> add_integer(-2, -2)
+	-4
+
+Exceptions
+==========
+
+Passing a string:
+	>>> add_integer(4, "Mark")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+	>>> add_integer("Jumba")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+Overflow:
+	>>> add_integer(float('inf'), float('-inf'))
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+Case NaN:
+	>>> add_integer(0, float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
