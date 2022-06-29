@@ -2,8 +2,6 @@
 How to use 3-say_my_name.py
 ==============================
 
-``say_my_name()`` prints "My name is <first name> <last name>"
-
 
 Import the function
 ===================
@@ -14,6 +12,8 @@ Import the function
 
 Tests
 =====
+
+``say_my_name()`` prints "My name is <first name> <last name>"
 
 ::
 

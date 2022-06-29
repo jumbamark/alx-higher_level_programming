@@ -2,7 +2,6 @@
 How to use 4-print_square.py
 ============================
 
-``print_square()`` prints a square with the character #
 
 Import the function
 ===================
@@ -13,6 +12,8 @@ Import the function
 
 Tests
 =====
+
+``print_square()`` prints a square with the character #
 
 ::
 
