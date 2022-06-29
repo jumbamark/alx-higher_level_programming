@@ -1,0 +1,33 @@
+=============================
+How to use 3-say_my_name.py
+==============================
+
+``say_my_name()`` prints "My name is <first name> <last name>"
+
+
+Import the function
+===================
+
+::
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+Tests
+=====
+
+::
+
+	>>> say_my_name("Jumba", "Mark")
+	My name is Jumba Mark
+
+first_name and last_name must be strings
+
+::
+
+	>>> say_my_name(10, "Jumba")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> say_my_name("Mark", 10)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
