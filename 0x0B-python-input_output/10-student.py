@@ -25,7 +25,7 @@ class Student:
 
         """
 
-        if type(attrs) is list and all([type(x) is str for x in atttrs]):
+        if type(attrs) is list and all([type(x) == str for x in atttrs]):
             return {k: v for k, v in self.__dict__.items() if k in attrs}
         else:
             return self.__dict__.copy()
