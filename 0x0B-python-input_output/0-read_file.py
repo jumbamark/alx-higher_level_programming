@@ -1,3 +1,5 @@
+!/usr/bin/python3
+
 """
 Module that contains a function that reads from a text file (UTF8)
 """
