@@ -16,8 +16,10 @@ load_from_json_file = __import__("8-load_from_json_file").load_from_json_file
 
 my_list = []
 
-if os.path.exists('add_item.json') and os.path.getsize('add_item.json') > 0:
+try:
     my_list = load_from_json_file('add_item.json')
+except Exception:
+    my_list = []
 
 if len(sys.argv) > 1:
     for arg in sys.argv[1:]:
