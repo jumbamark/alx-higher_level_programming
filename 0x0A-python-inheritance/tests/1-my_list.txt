@@ -1,3 +1,6 @@
+# 1-my_list.txt
+# Brennan D Baraban <375@holbertonschool.com>
+
 =======================
 How to Use 1-my_list.py
 =======================
