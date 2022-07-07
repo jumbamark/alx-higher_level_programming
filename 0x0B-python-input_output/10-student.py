@@ -25,10 +25,7 @@ class Student:
 
         """
 
-        my_dict = dict()
         if type(attrs) is list and all([type(x) is str for x in atttrs]):
-            for x in attrs:
-                if x in self.__dict__:
-                    my_dict.update({x: self.__dict__[x]})
-                return my_dict
+            return {k: v for k, v in self.__dict__.items() if k in attrs}
+        else:
             return self.__dict__.copy()
