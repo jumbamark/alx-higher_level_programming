@@ -50,3 +50,18 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(isinstance(r1, Base))
         self.assertTrue(issubclass(Rectangle, Base))
         self.assertFalse(isinstance(Rectangle, Base))
+
+    def test_access_private_attrs(self):
+        """Trying to access private attributes.
+        """
+        r1 = Rectangle(3, 6)
+        with self.assertRaises(AttributeError):
+            r1.__width
+            r1.__height
+
+    def test_validate_attrs(self):
+        """Trying to pass a string value and 0 for width"""
+        with self.assertRaises(TypeError):
+            r1 = Rectangle("2", 4)
+        with self.assertRaises(ValueError):
+            r2 = Rectangle(0, 2)
