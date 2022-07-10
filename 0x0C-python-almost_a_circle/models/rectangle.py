@@ -99,12 +99,13 @@ class Rectangle(Base):
         """Prints in stdout the Rectangle instance with the character #
         """
         for x in range(self.y):
-            print("$")
+            print()
+            #print("$")
         for i in range(self.height):
             print(" " * self.x, end="")
             for j in range(self.width):
                 print("#", end="")
-            print("$", end="")
+            #print("$", end="")
             print("\r")
 
     def update(self, *args, **kwargs):
