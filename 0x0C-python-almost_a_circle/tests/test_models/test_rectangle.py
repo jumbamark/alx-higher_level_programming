@@ -12,22 +12,21 @@ class TestRectangle(unittest.TestCase):
     def setUp(self):
         """Method invoked for each test."""
         Base._Base__nb_objects = 0
+        self.r1 = Rectangle(10, 2)
 
     def test_rectangle_id(self):
         """Testing for id"""
-        r1 = Rectangle(10, 2)
         r2 = Rectangle(2, 10)
         r3 = Rectangle(10, 2, 0, 0, 12)
-        self.assertEqual(r1.id, 1)
+        self.assertEqual(self.r1.id, 1)
         self.assertEqual(r2.id, 2)
         self.assertEqual(r3.id, 12)
 
     def test_rectangle_attributes(self):
         """Testing for attribute values"""
-        r1 = Rectangle(10, 2)
         r3 = Rectangle(10, 2, 3, 6, 12)
-        self.assertEqual(r1.width, 10)
-        self.assertEqual(r1.height, 2)
+        self.assertEqual(self.r1.width, 10)
+        self.assertEqual(self.r1.height, 2)
         self.assertEqual(r3.x, 3)
         self.assertEqual(r3.y, 6)
 
@@ -35,33 +34,38 @@ class TestRectangle(unittest.TestCase):
         """Check for missing arguments.
         """
         with self.assertRaises(TypeError):
-            r1 = Rectangle(1)
+            r2 = Rectangle(1)
 
         s = ("__init__() missing 2 required positional" +
              " arguments: 'width' and 'height'")
         with self.assertRaises(TypeError) as x:
-            r2 = Rectangle()
+            r3 = Rectangle()
         self.assertEqual(s, str(x.exception))
 
     def test_inheritance(self):
         """Tests for inheritance
         """
-        r1 = Rectangle(10, 2)
-        self.assertTrue(isinstance(r1, Base))
+        self.assertTrue(isinstance(self.r1, Base))
         self.assertTrue(issubclass(Rectangle, Base))
         self.assertFalse(isinstance(Rectangle, Base))
 
     def test_access_private_attrs(self):
         """Trying to access private attributes.
         """
-        r1 = Rectangle(3, 6)
         with self.assertRaises(AttributeError):
-            r1.__width
-            r1.__height
+            self.r1.__width
+            self.r1.__height
 
     def test_validate_attrs(self):
         """Trying to pass a string value and 0 for width"""
         with self.assertRaises(TypeError):
-            r1 = Rectangle("2", 4)
+            r2 = Rectangle("2", 4)
         with self.assertRaises(ValueError):
-            r2 = Rectangle(0, 2)
+            r3 = Rectangle(0, 2)
+
+    def test_area(self):
+        """Testing for area
+        """
+        self.assertEqual(20, self.r1.area())
+        self.r1.height = 50
+        self.assertEqual(self.r1.area(), 500)
