@@ -2,6 +2,9 @@
 """Module containing Test cases for the Rectangle class
 """
 import unittest
+from io import StringIO
+from unittest.mock import patch
+import contextlib
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -69,3 +72,19 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(20, self.r1.area())
         self.r1.height = 50
         self.assertEqual(self.r1.area(), 500)
+
+    def test_display(self):
+        """Testing for display
+        """
+        r1 = Rectangle(3, 2)
+        output = "###\r\n###\r\n"
+        with patch("sys.stdout", new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), output)
+
+        r2 = Rectangle(2, 5, 2, 4)
+        res = '##\r\n##\r\n##\r\n##\r\n##\r\n'
+        f = StringIO()
+        with contextlib.redirect_stdout(f):
+            r2.display()
+            self.assertEqual(f.getvalue(), res)
