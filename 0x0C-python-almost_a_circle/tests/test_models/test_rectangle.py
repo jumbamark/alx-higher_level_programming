@@ -93,3 +93,9 @@ class TestRectangle(unittest.TestCase):
         """Test __str__ return value
         """
         self.assertEqual(self.r1.__str__(), "[Rectangle] (1) 0/0 - 10/2")
+
+    def test_update(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
