@@ -95,7 +95,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r1.__str__(), "[Rectangle] (1) 0/0 - 10/2")
 
     def test_update(self):
+        """Test for public method with args and kwargs.
+        """
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(89)
         self.assertEqual(r1.id, 89)
         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
+        r1.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(r1.y, 3)
