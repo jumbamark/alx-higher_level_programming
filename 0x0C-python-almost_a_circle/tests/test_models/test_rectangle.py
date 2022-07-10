@@ -77,13 +77,13 @@ class TestRectangle(unittest.TestCase):
         """Testing for display
         """
         r1 = Rectangle(3, 2)
-        output = "###$\r\n###$\r\n"
+        output = "###\r\n###\r\n"
         with patch("sys.stdout", new=StringIO()) as str_out:
             r1.display()
             self.assertEqual(str_out.getvalue(), output)
 
         r2 = Rectangle(2, 5, 2, 4)
-        res = '$\n$\n$\n$\n  ##$\r\n  ##$\r\n  ##$\r\n  ##$\r\n  ##$\r\n'
+        res = '\n\n\n\n  ##\r\n  ##\r\n  ##\r\n  ##\r\n  ##\r\n'
         f = StringIO()
         with contextlib.redirect_stdout(f):
             r2.display()
