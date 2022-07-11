@@ -53,6 +53,21 @@ class TestSquare(unittest.TestCase):
         s1.update(30)
         self.assertEqual(s1.id, 30)
 
+    def test_to_dictionary(self):
+        """Test for public method to_dictionary.
+        """
+        s1 = Square(10, 2, 1)
+        s1_dictionary = s1.to_dictionary()
+        s_dictionary = {'x': 2, 'y': 1, 'id': 1, 'size': 10}
+        self.assertEqual(len(s1_dictionary), len(s_dictionary))
+        self.assertEqual(type(s1_dictionary), dict)
+        s2 = Square(1, 1)
+        s2.update(**s1_dictionary)
+        s2_dictionary = s2.to_dictionary()
+        self.assertEqual(len(s1_dictionary), len(s2_dictionary))
+        self.assertEqual(type(s2_dictionary), dict)
+        self.assertFalse(s1 == s2)
+
 
 if __name__ == "__main__":
     unittest.main()
