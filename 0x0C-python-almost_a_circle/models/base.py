@@ -102,20 +102,31 @@ class Base:
         Returns:
             list of instances
         """
-        filename = cls.__name__ + ".csv"
-        my_list = []
-        if os.path.exists(filename):
-            with open(filename, 'r') as f:
-                reader = csv.reader(f, delimiter=',')
-                if cls.__name__ == 'Rectangle':
-                    fields = ['id', 'width', 'height', 'x', 'y']
-                elif cls.__name__ == 'Square':
-                    fields = ['id', 'size', 'x', 'y']
-                for x, row in enumerate(reader):
-                    if x > 0:
-                        my_list = cls(1, 1)
-                        for j, e in enumerate(row):
-                            if e:
-                                setattr(i, fields[j], int(e))
-                        my_list.append(i)
-        return my_list
+        filename = "{}.csv".format(cls.__name__)
+
+        if os.path.exists(filename) is False:
+            return []
+
+        with open(filename, 'r') as readFile:
+            reader = csv.reader(readFile)
+            csv_list = list(reader)
+
+        if cls.__name__ == "Rectangle":
+            list_keys = ['id', 'width', 'height', 'x', 'y']
+        else:
+            list_keys = ['id', 'size', 'x', 'y']
+
+        matrix = []
+
+        for csv_elem in csv_list:
+            dict_csv = {}
+            for kv in enumerate(csv_elem):
+                dict_csv[list_keys[kv[0]]] = int(kv[1])
+            matrix.append(dict_csv)
+
+        list_ins = []
+
+        for index in range(len(matrix)):
+            list_ins.append(cls.create(**matrix[index]))
+
+        return list_ins
