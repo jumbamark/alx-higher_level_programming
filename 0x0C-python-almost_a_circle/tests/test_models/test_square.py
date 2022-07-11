@@ -32,8 +32,27 @@ class TestSquare(unittest.TestCase):
         """
         self.assertEqual(True, isinstance(self.s1, Rectangle))
 
+    def test_access_private_attrs(self):
+        """Trying to access a private attribute.
+        """
+        with self.assertRaises(AttributeError):
+            self.s1.__width
+            self.s1.__heught
+
     def test_str(self):
         """Test __sstr__ representation.
         """
         s1 = Square(14, 5, 2, 3)
         self.assertEqual(str(s1), "[Square] (3) 5/2 - 14")
+
+    def test_update(self):
+        """Test update method on Square.
+        """
+
+        s1 = Square(8)
+        s1.update(30)
+        self.assertEqual(s1.id, 30)
+
+
+if __name__ == "__main__":
+    unittest.main()
