@@ -91,3 +91,19 @@ class TestBase(unittest.TestCase):
 
         list_output_2 = Rectangle.from_json_string(None)
         self.assertEqual(list_output_2, [])
+
+    def test_create(self):
+        """Test class method create.
+        """
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(str(r1), str(r2))
+        self.assertFalse(r1 is r2)
+        self.assertFalse(r1 == r2)
+        s1 = Square(3, 5)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual(str(s1), str(s2))
+        self.assertFalse(s1 is s2)
+        self.assertFalse(s1 == s2)
