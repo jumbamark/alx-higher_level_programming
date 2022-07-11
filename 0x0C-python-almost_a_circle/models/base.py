@@ -87,9 +87,9 @@ class Base:
         Returns:
             instance created
         """
-        if cls.__name__ == 'Rectangle':
+        if cls.__name__ == "Rectangle":
             dummy = cls(10, 10)
-        elif cls.__name__ == 'Square':
-            dummy = cls(8)
+        else:
+            dummy = cls(10)
         dummy.update(**dictionary)
         return dummy
