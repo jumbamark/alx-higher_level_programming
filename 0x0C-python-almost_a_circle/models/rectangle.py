@@ -100,12 +100,12 @@ class Rectangle(Base):
         """
         for x in range(self.y):
             print()
-            #print("$")
+            # print("$")
         for i in range(self.height):
             print(" " * self.x, end="")
             for j in range(self.width):
                 print("#", end="")
-            #print("$", end="")
+            # print("$", end="")
             print("\r")
 
     def update(self, *args, **kwargs):
@@ -119,3 +119,15 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Method that returns the dictionary representation
+        of a Rectangle
+        """
+        list_attr = ['id', 'width', 'height', 'x', 'y']
+        my_dict = {}
+
+        for key in list_attr:
+            my_dict[key] = getattr(self, key)
+
+        return my_dict

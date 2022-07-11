@@ -103,3 +103,22 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
         r1.update(x=1, height=2, y=3, width=4)
         self.assertEqual(r1.y, 3)
+
+    def test_to_dictionary(self):
+        """Test for public method to_dictionary.
+        """
+        r1 = Rectangle(15, 4, 0, 6)
+        r1_dictionary = r1.to_dictionary()
+        r_dictionary = {'x': 10, 'y': 16, 'id': 20, 'height': 24, 'width': 15}
+        self.assertEqual(len(r1_dictionary), len(r_dictionary))
+        self.assertEqual(type(r1_dictionary), dict)
+        r2 = Rectangle(6, 4)
+        r2.update(**r1_dictionary)
+        r2_dictionary = r2.to_dictionary()
+        self.assertEqual(len(r1_dictionary), len(r2_dictionary))
+        self.assertEqual(type(r2_dictionary), dict)
+        self.assertFalse(r1 == r2)
+
+
+if __name__ == '__main__':
+    unittest.main()
