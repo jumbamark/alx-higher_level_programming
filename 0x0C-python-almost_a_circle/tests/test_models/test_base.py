@@ -71,3 +71,23 @@ class TestBase(unittest.TestCase):
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), "[]")
+
+    def test_from_json_string(self):
+        """Test static method from_json_string with normal types.
+        """
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7}
+        ]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        res = [{'width': 10, 'height': 4, 'id': 89},
+               {'width': 1, 'height': 7, 'id': 7}]
+        self.assertCountEqual(list_output, res)
+        self.assertEqual(type(list_output), list)
+
+        list_output_1 = Rectangle.from_json_string('')
+        self.assertEqual(list_output_1, [])
+
+        list_output_2 = Rectangle.from_json_string(None)
+        self.assertEqual(list_output_2, [])
