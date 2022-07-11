@@ -6,6 +6,9 @@ import unittest
 import os
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
+from unittest.mock import patch
+from io import StringIO
 
 
 class TestBase(unittest.TestCase):
@@ -49,3 +52,22 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_d_1, "[]")
         json_d_2 = Base.to_json_string(None)
         self.assertEqual(json_d_1, "[]")
+
+    def test_save_to_file(self):
+        """Test class method save_to_file.
+        """
+        Square.save_to_file(None)
+        res = "[]\n"
+        with open("Square.json", "r") as file:
+            with patch('sys.stdout', new=StringIO()) as str_out:
+                print(file.read())
+                self.assertEqual(str_out.getvalue(), res)
+
+        try:
+            os.remove("Square.json")
+        except Exception:
+            pass
+
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
