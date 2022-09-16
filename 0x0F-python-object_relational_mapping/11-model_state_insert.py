@@ -20,4 +20,3 @@ if __name__ == "__main__":
     session.add(obj)
     session.commit()
     print(obj.id)
-
