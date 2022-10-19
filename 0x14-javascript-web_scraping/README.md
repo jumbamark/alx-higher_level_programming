@@ -9,10 +9,10 @@ Resources
 
 **Read or watch**:
 
--   [Working with JSON data](https://alx-intranet.hbtn.io/rltoken/ONv-sSv-FA87Mc5rMZmO6A "Working with JSON data")
--   [The workflow of accessing the attributes of a simply-created JSON object by Jimmy Tran from Cohort 1 - San Francisco](https://alx-intranet.hbtn.io/rltoken/zm0h7FqpQCZZpPZqxxwLxA "The workflow of accessing the attributes of a simply-created JSON object by Jimmy Tran from Cohort 1 - San Francisco")
--   [request module](https://alx-intranet.hbtn.io/rltoken/goymbxGy-cTc5ZdKBTUcTQ "request module")
--   [Modern JS](https://alx-intranet.hbtn.io/rltoken/j2PStAUtVPdXKwrrFxpt0g "Modern JS")
+-   [Working with JSON data](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON#no_really_what_is_json)
+-   [The workflow of accessing the attributes of a simply-created JSON object by Jimmy Tran from Cohort 1 - San Francisco](https://medium.com/@vietkieutie/the-workflow-of-accessing-the-attributes-of-a-simply-created-json-object-82a5b33e2319)
+-   [request module](https://github.com/request/request)
+-   [Modern JS](https://github.com/mbeaudru/modern-js-cheatsheet)
 
 Learning Objectives
 -------------------
@@ -54,7 +54,7 @@ $ sudo apt-get install -y nodejs
 
 ### Install semi-standard
 
-[Documentation](https://alx-intranet.hbtn.io/rltoken/GXh9DyGGivUB7pdq9Oqmzg "Documentation")
+[Documentation](https://github.com/standard/semistandard)
 
 ```
 $ sudo npm install semistandard --global
@@ -63,7 +63,7 @@ $ sudo npm install semistandard --global
 
 ### Install `request` module and use it
 
-[Documentation](https://alx-intranet.hbtn.io/rltoken/goymbxGy-cTc5ZdKBTUcTQ "Documentation")
+[Documentation](https://github.com/request/request)
 
 ```
 $ sudo npm install request --global
@@ -172,7 +172,7 @@ mandatory
 Write a script that prints the title of a Star Wars movie where the episode number matches a given integer.
 
 -   The first argument is the movie ID
--   You must use the [Star wars API](https://alx-intranet.hbtn.io/rltoken/YMr5jJ8pkuJCZDTyIWc7Aw "Star wars API") with the endpoint `https://swapi-api.hbtn.io/api/films/:id`
+-   You must use the [Star wars API](https://swapi-api.hbtn.io/) with the endpoint `https://swapi-api.hbtn.io/api/films/:id`
 -   You must use the module `request`
 
 ```
@@ -198,7 +198,7 @@ mandatory
 
 Write a script that prints the number of movies where the character "Wedge Antilles" is present.
 
--   The first argument is the API URL of the [Star wars API](https://alx-intranet.hbtn.io/rltoken/YMr5jJ8pkuJCZDTyIWc7Aw "Star wars API"): `https://swapi-api.hbtn.io/api/films/`
+-   The first argument is the API URL of the [Star wars API](https://swapi-api.hbtn.io/): `https://swapi-api.hbtn.io/api/films/`
 -   Wedge Antilles is character ID `18` - your script **must** use this ID for filtering the result of the API
 -   You must use the module `request`
 
